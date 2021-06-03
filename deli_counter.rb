@@ -1,1 +1,2 @@
-katz_deli = []
+def katz_deli = []
+  puts "The line is currently empty."
