@@ -1,31 +1,24 @@
-katz_deli = []
+var katzDeli = [];
 
-def line(katz_del)
-  position = 1
-  queue = []
-end
+function currentLine(line){
+  if(!line.length) {
+    return "The line is currently empty.";
+  }
+  var lineNamesandNumbers = [];
 
-if katz_deli.length == 0
-   puts "The line is currently empty."
-else
-   katz_deli.each do |customer|
-   queue.push("#. #")
-   position +=1
-end
-puts "The line is currently: #{queue.join(" ")}"
-end
-end
+  for(var i=0; i<line.length; i++) {
+    lineNamesandNumbers.push(i+1 + ". "+ line[i]);
+  }
+  console.log("The line is currently: " + lineNamesandNumbers)
+  return "The line is currently: " + lineNamesandNumbers.join(', ');
+}
 
-def take_a_number(katz_deli, customer)
-   katz_deli.push(customer)
-   puts "Welcome, #. You are number # in line."
-end
-
-def now_serving(katz_deli)
-   if katz_deli.empty?
-      puts "There is nobody waiting to be served!"
-   else
-      puts "Currently serving #."
-      katz_deli.shift
-   end
-end
+function nowServing(line) {
+  if(!line.length) {
+    console.log("There is nobody waiting to be served!")
+    return "There is nobody waiting to be served!"
+  } else {
+    //console.log("Currently serving " + line.shift());
+    return "Currently serving " + line.shift();
+  }
+}
